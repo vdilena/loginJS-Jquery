@@ -108,8 +108,20 @@ $(document).ready(function () {
         
         for (var i = 0; i < usuariosValidos.length; i++) {
 
-            var usuario = $(`<li class="list-group-item text-center">${usuariosValidos[i].usuario}</li>`)
+            var usuario = $(`<li class="list-group-item text-center" onclick = "quitarUsuario(this)">${usuariosValidos[i].usuario}</li>`)
             $("#lista-items").append(usuario);
         }
     })
 });
+
+function quitarUsuario(objetoLI) {
+
+    $(objetoLI).remove()
+
+    if($(".list-group-item").length == 1) {
+
+        $(".list-group-item").removeClass("invisible")
+
+        $("#lista-items").parent().css("font-size","30px")
+    }
+}
