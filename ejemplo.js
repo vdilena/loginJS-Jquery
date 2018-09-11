@@ -104,7 +104,7 @@ function irAHome() {
 
 $(document).ready(function () {
     
-    $("#ver_usuarios").on("click", function (){
+    $("#ver_usuarios").one("click", function (){
         
         for (var i = 0; i < usuariosValidos.length; i++) {
 
