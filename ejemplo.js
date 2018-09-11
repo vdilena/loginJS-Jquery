@@ -116,6 +116,8 @@ $(document).ready(function () {
 
 function quitarUsuario(objetoLI) {
 
+    $(objetoLI).next().css("background-color", "cyan")
+    
     $(objetoLI).remove()
 
     if($(".list-group-item").length == 1) {
