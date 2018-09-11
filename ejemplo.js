@@ -20,12 +20,14 @@ if(!localStorage.getItem("credenciales")) {
 
 function validarCantCaracteres(input) {
 
+    
     //var valorInput = input.value
     var valorInput = $(input)
-
+    
     //if(valorInput.length < 6) {
-    if(valorInput.val().length < 6) {
-
+        if(valorInput.val().length < 6) {
+            
+        console.log(input.id)
         //var divError = document.getElementById(`error_${input.id}_incorrecto`)
         var divError = $(`#error_${input.id}_incorrecto`)
         //divError.innerHTML = `Peligro!! Esta ingresando un ${input.id} incorrecto`
@@ -109,10 +111,19 @@ $(document).ready(function () {
         for (var i = 0; i < usuariosValidos.length; i++) {
 
             var usuario = $(`<li class="list-group-item text-center" onclick = "quitarUsuario(this)">${usuariosValidos[i].usuario}</li>`)
-            $("#lista-items").append(usuario);
+            $("#lista-items").append(usuario)
         }
     })
-});
+
+    $("#usuario").keydown(function (evento) { 
+
+        
+        if(evento.which == 13) {
+            console.log("entro a keydown")
+            validarCantCaracteres(document.getElementById("usuario"))
+        }
+    });
+})
 
 function quitarUsuario(objetoLI) {
 
