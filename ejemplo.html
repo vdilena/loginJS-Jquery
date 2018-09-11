@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+</head>
+
+<body>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <div id="container" class="container">
+    <h2 class="text-center">Login</h2>
+    <h2 id="error_credenciales" style="color: red" class="text-center"></h2>
+    <form onsubmit="event.preventDefault()">
+      <div class="form-group">
+        <label>Ingrese usuario</label>
+        <input class="form-control" id="usuario" onblur="validarCantCaracteres(this)" onclick="resetError(this)" placeholder="Nombre de 6 letras o mas">
+        <div id="error_usuario_incorrecto"></div>
+      </div>
+      <div class="form-group">
+        <label>Ingrese password</label>
+        <input type="password" class="form-control" id="password" onblur="validarCantCaracteres(this)" onclick="resetError(this)"
+          placeholder="Password de 6 letras o mas">
+        <div id="error_password_incorrecto"></div>
+      </div>
+      <button class="btn btn-primary float-right" onclick="ingresar()">Ingresar al sistema</button>
+    </form>
+  </div>
+  <script src="ejemplo.js"></script>
+</body>
+
+</html>
