@@ -123,18 +123,28 @@ $(document).ready(function () {
             validarCantCaracteres(document.getElementById("usuario"))
         }
     });
+
+    $("#mostrar-productos").one("click", function (e) {
+        
+        console.log("mostrar-productos")
+        $("#caja-invisible").show(3000, function () {
+            console.log("Termino de mostrarse!")
+        })
+    });
 })
 
 function quitarUsuario(objetoLI) {
 
     $(objetoLI).next().css("background-color", "cyan")
     
-    $(objetoLI).remove()
+    $(objetoLI).hide(3000, function () {
+        console.log("Termino de ocultarse!")
+    })
 
-    if($(".list-group-item").length == 1) {
+    /*if($(".list-group-item").length == 1) {
 
         $(".list-group-item").removeClass("invisible")
 
         $("#lista-items").parent().css("font-size","30px")
-    }
+    }*/
 }
