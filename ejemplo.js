@@ -127,9 +127,7 @@ $(document).ready(function () {
     $("#mostrar-productos").one("click", function (e) {
         
         console.log("mostrar-productos")
-        $("#caja-invisible").show(3000, function () {
-            console.log("Termino de mostrarse!")
-        })
+        $("#caja-invisible").fadeIn(3000);
     });
 })
 
@@ -137,9 +135,7 @@ function quitarUsuario(objetoLI) {
 
     $(objetoLI).next().css("background-color", "cyan")
     
-    $(objetoLI).hide(3000, function () {
-        console.log("Termino de ocultarse!")
-    })
+    $(objetoLI).fadeOut();
 
     /*if($(".list-group-item").length == 1) {
 
