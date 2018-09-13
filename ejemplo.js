@@ -127,7 +127,7 @@ $(document).ready(function () {
     $("#mostrar-productos").one("click", function (e) {
         
         console.log("mostrar-productos")
-        $("#caja-invisible").fadeIn(3000);
+        $("#caja-invisible").delay(5000).slideDown(1000);
     });
 })
 
@@ -135,7 +135,7 @@ function quitarUsuario(objetoLI) {
 
     $(objetoLI).next().css("background-color", "cyan")
     
-    $(objetoLI).fadeOut();
+    $(objetoLI).slideUp();
 
     /*if($(".list-group-item").length == 1) {
 
